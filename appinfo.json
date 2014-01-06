@@ -1,0 +1,16 @@
+{
+  "uuid": "b9007436-a62d-44ad-80da-20ba26e627ed",
+  "shortName": "Bybussen",
+  "longName": "bybussen_pebble",
+  "companyName": "MakeAwesomeHappen",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {},
+  "resources": {
+    "media": []
+  },
+  "capabilities": [ "location" ]
+}
