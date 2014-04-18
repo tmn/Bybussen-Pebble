@@ -8,7 +8,6 @@ var getClosestStop
 
 /* Init shit
 --------------------------------------------------------------- */
-// apiUrl = 'http://api.visuweb.no/bybussen/5.0/Departure/Route/16011333/7c19bd89eb3476d2e17fd11fd816ff65';
 apiUrl = 'http://api.visuweb.no/bybussen/6.0/Departure/Nearby/';
 
 Pebble.addEventListener("ready",
@@ -71,30 +70,30 @@ sendRequest = function (url) {
 
         var dict = {};
 
-        if (data.nearest_stop != null && data.nearest_stop.name != null) {
+        if (data.nearest_stop !== null && data.nearest_stop.name !== null) {
           dict[0] = data.nearest_stop.name.substring(0,16);
         }
 
-        if (data.nearest_stop != null && data.nearest_stop.retning != null) {
+        if (data.nearest_stop !== null && data.nearest_stop.retning !== null) {
           dict[1] = data.nearest_stop.retning;
         }
 
-        if (data.next[0] != null) {
+        if (data.next[0] !== null) {
           dict[2] = data.next[0].l;
           dict[3] = data.next[0].t;
         }
 
-        if (data.next[1] != null) {
+        if (data.next[1] !== null) {
           dict[4] = data.next[1].l;
           dict[5] = data.next[1].t;
         }
 
-        if (data.next[2] != null) {
+        if (data.next[2] !== null) {
           dict[6] = data.next[2].l;
           dict[7] = data.next[2].t;
         }
 
-        if (data.next[3] != null) {
+        if (data.next[3] !== null) {
           dict[8] = data.next[3].l;
           dict[9] = data.next[3].t;
         }
@@ -106,13 +105,13 @@ sendRequest = function (url) {
         console.log("Error");
       }
     }
-  }
+  };
 
   req.send(null);
 };
 
 sendMessage = function (data) {
-  Pebble.sendAppMessage(data, 
+  Pebble.sendAppMessage(data,
     function (e) {
       console.log("Message sent");
     },
@@ -124,5 +123,3 @@ sendMessage = function (data) {
     }
   );
 };
-
-
